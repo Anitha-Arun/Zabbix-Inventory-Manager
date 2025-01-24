@@ -3,8 +3,8 @@
  
  This Python script automates the process of cleaning inventory data from a CSV file and syncing it with the Zabbix monitoring system. The core functionality includes data cleaning, host creation/updating in Zabbix, and error handling for each step.
 
-#Main Features
-CSV Cleaning:
+**Main Features**
+**CSV Cleaning:**
 
 The clean_csv function reads a raw CSV file, trims whitespace, handles empty rows, and ensures only the first 8 columns are considered.
 It handles problematic lines, normalizes text (e.g., removes extra spaces), and drops rows with empty values.
@@ -23,30 +23,31 @@ Device Identifier Generation:
 
 A unique identifier is generated for each device based on its serial number, MAC address, or a counter if both are missing.
 
-#CSV File Processing:
+**CSV File Processing:**
 
 The script reads a cleaned CSV file, processes each device entry, and either creates a new host in Zabbix or updates an existing one.
 The main function orchestrates the workflow, from cleaning the CSV to updating the Zabbix system.
 
-#How to Use
+**How to Use**
 Prepare your input CSV file (e.g., sending.csv) containing inventory details with columns for device model, serial number, MAC address, etc.
 Run the script. It will clean the CSV and attempt to update the Zabbix system with the inventory data.
 The cleaned CSV will be saved as cleaned_sending.csv (or another name of your choice).
 Successful and failed updates are logged in a file named inventory_manager_<current_date>.log.
 
-#Dependencies
+**Dependencies**
 
 requests: Used for interacting with the Zabbix API.
 pandas: Used for reading, cleaning, and processing the CSV data.
 logging: Used for logging all actions performed by the script.
 json: Used to send and receive data in JSON format to/from the Zabbix API.
 
-#Important Notes
+**Important Notes**
 
 Ensure the Zabbix API URL and credentials (username, password) are correctly set in the script before running it.
 The script uses the first 8 columns of the input CSV. Modify the column settings if your CSV structure changes.
 The Zabbix system must be configured to accept API requests and have the necessary permissions for creating or updating hosts and groups.
 
-#Author
+**Author**__
+
 This is a Python script written and maintained by Anitha.Damarla. The script is designed to clean inventory data from a CSV file and interact with the Zabbix monitoring system to create or update hosts..
 for Doubts please contant :Anithadamarla0313@gmail.com
